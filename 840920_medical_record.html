@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Medical Record</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fdfa',
+                            100: '#ccfbf1',
+                            200: '#99f6e4',
+                            500: '#14b8a6',
+                            600: '#00635D', /* Netcare-inspired teal */
+                            700: '#0f766e',
+                            900: '#134e4a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #f1f5f9; /* Slate 100 for desktop background */
+            -webkit-font-smoothing: antialiased;
+        }
+    </style>
+</head>
+<body class="text-slate-800 pb-0 lg:pb-12 font-sans">
+
+    <!-- Max width 5xl creates a beautiful desktop view, while still adapting perfectly to mobile screens -->
+    <main class="max-w-5xl mx-auto bg-slate-50 lg:bg-white min-h-screen lg:min-h-[auto] lg:shadow-2xl lg:rounded-2xl lg:mt-10 overflow-hidden lg:border border-slate-200 flex flex-col">
+        
+        <!-- Header Section -->
+        <header class="bg-white border-b border-slate-200 p-6 relative z-10">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
+                <div class="flex items-center gap-2">
+                    
+                        <img src="https://www.netcare.co.za/Portals/_default/skins/netcare-core/images/logos/Netcare.png" 
+                         alt="Netcare Logo" 
+                         class="h-10 w-auto object-contain"
+                            onerror="this.src='https://placehold.co/200x60/ffffff/00635D?text=Netcare+Logo'">
+                </div>
+                <div class="bg-slate-100 text-slate-600 px-4 py-1.5 rounded-full text-xs font-bold border border-slate-200 flex items-center gap-2">
+                    <i class="fa-solid fa-qrcode text-brand-600"></i>
+                    RECORD ID: #84920
+                </div>
+            </div>
+            
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 bg-brand-50 p-5 rounded-xl border border-brand-100">
+                <div class="flex items-center gap-4">
+                    <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-sm border border-brand-200 flex-shrink-0">
+                        <i class="fa-solid fa-user text-3xl text-brand-600"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-2xl lg:text-3xl font-bold text-slate-800 mb-1">Alexandra Tshilanda Mohamed</h1>
+                        <p class="text-slate-600 text-sm flex items-center gap-2">
+                            <i class="fa-regular fa-calendar-check text-brand-500"></i> Admitted: Oct 2, 2026
+                        </p>
+                    </div>
+                </div>
+                <!-- Status Badge -->
+                <div class="flex items-center gap-2 mt-2 sm:mt-0">
+                    <span class="px-3 py-1.5 bg-brand-100 text-brand-700 rounded-lg text-xs font-bold border border-brand-200 flex items-center gap-2 shadow-sm">
+                        <div class="w-2 h-2 rounded-full bg-brand-500 animate-pulse"></div>
+                        ACTIVE PATIENT
+                    </span>
+                </div>
+            </div>
+        </header>
+
+        <div class="p-0 sm:p-6 lg:p-8 flex-1 bg-slate-50 lg:bg-transparent">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                
+                <!-- LEFT SIDEBAR -->
+                <div class="lg:col-span-4 space-y-6 px-5 sm:px-0 pt-5 sm:pt-0">
+                    
+                    <!-- Patient Details Grid -->
+                    <section class="bg-white rounded-2xl shadow-sm border border-slate-200 p-5">
+                        <h2 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4">Patient Details & Vitals</h2>
+                        <div class="grid grid-cols-2 gap-3">
+                            
+                            <!-- Sex -->
+                            <div class="flex flex-col p-3 bg-slate-50 rounded-xl border border-slate-100">
+                                <div class="flex items-center gap-2 mb-1">
+                                    <i class="fa-solid fa-venus-mars text-brand-500 text-sm"></i>
+                                    <p class="text-xs text-slate-500">Sex</p>
+                                </div>
+                                <p class="font-bold text-slate-800 text-lg">Female</p>
+                            </div>
+
+                            <!-- ID Number -->
+                            <div class="flex flex-col p-3 bg-slate-50 rounded-xl border border-slate-100">
+                                <div class="flex items-center gap-2 mb-1">
+                                    <i class="fa-solid fa-id-card text-brand-500 text-sm"></i>
+                                    <p class="text-xs text-slate-500">ID Number</p>
+                                </div>
+                                <p class="font-bold text-slate-800 text-lg">P00209676</p>
+                            </div>
+
+                            <div class="flex flex-col p-3 bg-slate-50 rounded-xl border border-slate-100">
+                                <div class="flex items-center gap-2 mb-1">
+                                    <i class="fa-solid fa-cake-candles text-brand-500 text-sm"></i>
+                                    <p class="text-xs text-slate-500">Age</p>
+                                </div>
+                                <p class="font-bold text-slate-800 text-lg">22 Yrs</p>
+                            </div>
+                            
+                            <div class="flex flex-col p-3 bg-slate-50 rounded-xl border border-slate-100">
+                                <div class="flex items-center gap-2 mb-1">
+                                    <i class="fa-solid fa-weight-scale text-brand-500 text-sm"></i>
+                                    <p class="text-xs text-slate-500">Weight</p>
+                                </div>
+                                <p class="font-bold text-slate-800 text-lg">75 kg</p>
+                            </div>
+
+                            <div class="flex flex-col p-3 bg-slate-50 rounded-xl border border-slate-100">
+                                <div class="flex items-center gap-2 mb-1">
+                                    <i class="fa-solid fa-droplet text-brand-500 text-sm"></i>
+                                    <p class="text-xs text-slate-500">Blood</p>
+                                </div>
+                                <p class="font-bold text-slate-800 text-lg">O+</p>
+                            </div>
+
+                            <div class="flex flex-col p-3 bg-slate-50 rounded-xl border border-slate-100">
+                                <div class="flex items-center gap-2 mb-1">
+                                    <i class="fa-solid fa-ruler-vertical text-brand-500 text-sm"></i>
+                                    <p class="text-xs text-slate-500">Height</p>
+                                </div>
+                                <p class="font-bold text-slate-800 text-lg">165 cm</p>
+                            </div>
+
+                            <!-- Allergies -->
+                            <div class="flex flex-col p-3 bg-slate-50 rounded-xl border border-slate-100">
+                                <div class="flex items-center gap-2 mb-1">
+                                    <i class="fa-solid fa-triangle-exclamation text-brand-500 text-sm"></i>
+                                    <p class="text-xs text-slate-500">Allergies</p>
+                                </div>
+                                <p class="font-bold text-red-600 text-lg mt-1">Penicillin</p>
+                            </div>
+
+                            <!-- Contact -->
+                            <div class="flex flex-col p-3 bg-slate-50 rounded-xl border border-slate-100">
+                                <div class="flex items-center gap-2 mb-1">
+                                    <i class="fa-solid fa-phone text-brand-500 text-sm"></i>
+                                    <p class="text-xs text-slate-500">Mobile</p>
+                                </div>
+                                <p class="font-bold text-slate-800 text-lg mt-1">+243 85 053 4071</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Confidentiality Notice -->
+                    <section class="bg-red-50 rounded-2xl border border-red-100 p-5 shadow-sm flex items-start gap-3">
+                        <div class="text-red-500 mt-0.5 bg-white w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 shadow-sm border border-red-100">
+                            <i class="fa-solid fa-lock"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-sm font-bold text-red-800 mb-1.5">Strictly Confidential</h3>
+                            <p class="text-xs text-red-700 leading-relaxed">
+                                This file contains restricted medical data. For full treatment details, please securely contact the attending <strong class="font-bold">Doctor</strong>, an authorized <strong class="font-bold">Family Member</strong>, or the <strong class="font-bold">Patient</strong> directly.
+                            </p>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- RIGHT MAIN CONTENT -->
+                <div class="lg:col-span-8 space-y-6 px-5 sm:px-0 pb-6 sm:pb-0">
+                    
+                    <!-- Clinical Details Section -->
+                    <section class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 relative overflow-hidden">
+                        <div class="absolute top-0 left-0 w-1.5 h-full bg-brand-500"></div>
+                        <h2 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4">Diagnosis & Notes</h2>
+                        
+                        <div class="mb-5">
+                            <h3 class="text-sm font-semibold text-slate-600 mb-2">Reason for Visit & Condition</h3>
+                            <p class="text-slate-700 bg-slate-50 p-4 rounded-xl border border-slate-100 leading-relaxed text-sm">
+                                Patient admitted presenting with acute symptoms requiring scheduled surgical intervention to prevent further complications. 
+                            </p>
+                        </div>
+                    </section>
+
+                    <!-- Timeline Section -->
+                    <section class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 lg:p-8">
+                        <h2 class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-6 flex items-center gap-2">
+                            <i class="fa-solid fa-calendar-days text-brand-500"></i> Medical Schedule & Care Plan
+                        </h2>
+                        
+                        <div class="relative border-l-2 border-brand-100 ml-4 space-y-8 pb-4">
+                            
+                            <!-- Oct 2: Consultation -->
+                            <div class="relative pl-8">
+                                <div class="absolute -left-[11px] top-0.5 w-5 h-5 rounded-full bg-brand-500 border-4 border-white shadow-sm flex items-center justify-center"></div>
+                                <div class="bg-brand-50 text-brand-700 text-xs font-bold px-2.5 py-1 rounded-md inline-block mb-2 border border-brand-100">Friday, Oct 2, 2026</div>
+                                <h3 class="text-base font-bold text-slate-800">Initial Consultation</h3>
+                                <p class="text-sm text-slate-600 mt-1">Patient admitted for assessment. Diagnosis confirmed, treatment plan established.</p>
+                            </div>
+
+                            <!-- Oct 5: Operation -->
+                            <div class="relative pl-8">
+                                <div class="absolute -left-[11px] top-0.5 w-5 h-5 rounded-full bg-amber-400 border-4 border-white shadow-sm flex items-center justify-center"></div>
+                                <div class="bg-amber-50 text-amber-700 text-xs font-bold px-2.5 py-1 rounded-md inline-block mb-2 border border-amber-100">Monday, Oct 5, 2026</div>
+                                <h3 class="text-base font-bold text-slate-800">Scheduled Operation</h3>
+                                <p class="text-sm text-slate-600 mt-1">Surgical procedure to be performed. Patient required to fast 12 hours prior to prep.</p>
+                            </div>
+
+                            <!-- Oct 7: Discharge -->
+                            <div class="relative pl-8">
+                                <div class="absolute -left-[11px] top-0.5 w-5 h-5 rounded-full bg-blue-400 border-4 border-white shadow-sm flex items-center justify-center"></div>
+                                <div class="bg-blue-50 text-blue-700 text-xs font-bold px-2.5 py-1 rounded-md inline-block mb-2 border border-blue-100">Wednesday, Oct 7, 2026</div>
+                                <h3 class="text-base font-bold text-slate-800">Hospital Discharge</h3>
+                                <p class="text-sm text-slate-600 mt-1">Expected discharge date pending post-op evaluation, pain management, and stable vitals.</p>
+                            </div>
+
+                            <!-- Oct 10: Fit to Travel -->
+                            <div class="relative pl-8">
+                                <div class="absolute -left-[11px] top-0.5 w-5 h-5 rounded-full bg-emerald-500 border-4 border-white shadow-sm flex items-center justify-center"></div>
+                                <div class="bg-emerald-50 text-emerald-700 text-xs font-bold px-2.5 py-1 rounded-md inline-block mb-2 border border-emerald-100">Saturday, Oct 10, 2026</div>
+                                <h3 class="text-base font-bold text-slate-800 flex items-center gap-2">
+                                    Fit to Travel <i class="fa-solid fa-plane-departure text-emerald-600 text-sm"></i>
+                                </h3>
+                                <p class="text-sm text-slate-600 mt-1">Patient anticipated to be fully cleared for commercial air travel and long-distance transit.</p>
+                            </div>
+
+                            <!-- Follow-up -->
+                            <div class="relative pl-8">
+                                <div class="absolute -left-[11px] top-0.5 w-5 h-5 rounded-full bg-slate-300 border-4 border-white shadow-sm flex items-center justify-center"></div>
+                                <div class="bg-slate-100 text-slate-600 text-xs font-bold px-2.5 py-1 rounded-md inline-block mb-2 border border-slate-200">~ January 2027 (After 3 Months)</div>
+                                <h3 class="text-base font-bold text-slate-800">Follow-up Check</h3>
+                                <p class="text-sm text-slate-600 mt-1">Routine check-up to monitor long-term recovery and ensure no secondary complications.</p>
+                            </div>
+                            
+                        </div>
+                    </section>
+
+                    <!-- Invoice Section -->
+                    <section class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+                        <div class="bg-slate-50 p-4 border-b border-slate-200 flex justify-between items-center">
+                            <h2 class="text-xs font-bold text-slate-600 uppercase tracking-wider flex items-center gap-2">
+                                <i class="fa-solid fa-file-invoice-dollar text-slate-400"></i> Billing Summary
+                            </h2>
+                            <span class="text-xs text-slate-500 font-mono bg-white px-2 py-1 rounded border border-slate-200">INV-2026-901</span>
+                        </div>
+                        <div class="p-5">
+                            <div class="flex justify-between items-center mb-3">
+                                <span class="text-sm text-slate-600">Consultation & Assessment</span>
+                                <span class="text-sm font-medium">R 4,500.00</span>
+                            </div>
+                            <div class="flex justify-between items-center mb-5">
+                                <span class="text-sm text-slate-600">Surgical Procedure Deposit</span>
+                                <span class="text-sm font-medium">R 21,000.00</span>
+                            </div>
+                            <div class="flex justify-between items-center mb-5">
+                                <span class="text-sm text-slate-600">VAT (15%)</span>
+                                <span class="text-sm font-medium">R 3,825.00</span>
+                            </div>
+                            
+                            <div class="border-t border-dashed border-slate-300 pt-4 flex justify-between items-end">
+                                <div>
+                                    <p class="text-xs text-slate-500 mb-1 uppercase tracking-wide font-semibold">Total Amount</p>
+                                    <p class="text-2xl font-bold text-slate-800">R 29,325.00</p>
+                                </div>
+                                
+                                <div class="bg-red-50 text-red-600 border border-red-200 px-4 py-2 rounded-lg flex items-center gap-2 shadow-sm">
+                                    <i class="fa-solid fa-circle-exclamation text-xs"></i>
+                                    <span class="text-sm font-bold tracking-wide">PAYMENT DUE</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="bg-white border-t border-slate-200 p-8 text-center mt-auto">
+            
+            <p class="text-sm text-slate-600 font-bold mb-1">Netcare Hospitals</p>
+            <p class="text-xs text-slate-500 mb-4">Providing you with the best care.</p>
+            <p class="text-[10px] text-slate-400 uppercase tracking-widest">Secure Record generated on Oct 2, 2026</p>
+        </footer>
+
+    </main>
+
+</body>
+</html>
